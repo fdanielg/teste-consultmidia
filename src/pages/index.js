@@ -1,8 +1,9 @@
 import * as Yup from "yup";
 
-import LoadingSpinner from "@/helpers/LoadingSpinner";
+import LoadingSpinner from "@/helpers/LoadingSpinner/LoadingSpinner";
 import ReactGoogleAutocomplete from "react-google-autocomplete";
 import axios from "axios";
+import styles from "./styles.module.scss";
 import { useFormik } from "formik";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -81,10 +82,10 @@ export default function Home() {
   });
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <h1>Calculadora de aluguel de carros</h1>
-      <form className="form-wrapper" onSubmit={formik.handleSubmit}>
-        <div className="wrapper-input">
+      <form className={styles.formWrapper} onSubmit={formik.handleSubmit}>
+        <div className={styles.wrapperInput}>
           <label htmlFor="cidadeOrigem">Cidade de origem:</label>
 
           <div style={{ width: "100%" }}>
@@ -99,14 +100,14 @@ export default function Home() {
               }
             />
             {formik.touched.cidadeOrigem && formik.errors.cidadeOrigem ? (
-              <p className="error">{formik.errors.cidadeOrigem}</p>
+              <p className={styles.error}>{formik.errors.cidadeOrigem}</p>
             ) : null}
           </div>
         </div>
 
-        <div className="wrapper-input">
+        <div className={styles.wrapperInput}>
           <label htmlFor="cidadeDestino">Cidade de destino:</label>
-          <div >
+          <div>
             <ReactGoogleAutocomplete
               inputAutocompleteValue={formik.values.cidadeDestino}
               onChange={formik.handleChange}
@@ -119,12 +120,12 @@ export default function Home() {
             />
 
             {formik.touched.cidadeDestino && formik.errors.cidadeDestino ? (
-              <p className="error">{formik.errors.cidadeDestino}</p>
+              <p className={styles.error}>{formik.errors.cidadeDestino}</p>
             ) : null}
           </div>
         </div>
 
-        <div className="wrapper-input">
+        <div className={styles.wrapperInput}>
           <label>Tipo de carro:</label>
           <select {...formik.getFieldProps("tipoCarro")}>
             {tipoCarroOptions.map((option, index) => (

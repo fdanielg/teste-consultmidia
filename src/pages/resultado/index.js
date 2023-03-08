@@ -1,13 +1,14 @@
 import { formatCurrency } from "@/helpers/fomatCurrency";
+import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
 
 export default function Resultado() {
   const router = useRouter();
   return (
-    <div className="container-resultado">
+    <div className={styles.container}>
       <h1>Resultado</h1>
 
-      <div className="wrapper-resultado">
+      <div className={styles.wrapper}>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
           <h2>Cidade origem:</h2>
           <h3>{router.query.cidadeOrigem}</h3>
