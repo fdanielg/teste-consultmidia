@@ -75,37 +75,40 @@ export default function Home() {
   });
 
   return (
-    <div>
+    <div className="container">
       <h1>Calculadora de aluguel de carros</h1>
       <form className="form-wrapper" onSubmit={formik.handleSubmit}>
         <div className="wrapper-input">
           <label htmlFor="cidadeOrigem">Cidade de origem:</label>
-          <ReactGoogleAutocomplete
-            id="cidadeOrigem"
-            required
-            apiKey="AIzaSyAQlXH_lfQPVBxaO5SEifHsSVQou9d_etY"
-            onPlaceSelected={(place) =>
-              formik.setFieldValue("cidadeOrigem", place.formatted_address)
-            }
-          />
-          {formik.touched.cidadeOrigem && formik.errors.cidadeOrigem ? (
-            <div>{formik.errors.cidadeOrigem}</div>
-          ) : null}
+
+          <div style={{ width: "100%" }}>
+            <ReactGoogleAutocomplete
+              id="cidadeOrigem"
+              apiKey="AIzaSyAQlXH_lfQPVBxaO5SEifHsSVQou9d_etY"
+              onPlaceSelected={(place) =>
+                formik.setFieldValue("cidadeOrigem", place.formatted_address)
+              }
+            />
+            {formik.touched.cidadeOrigem && formik.errors.cidadeOrigem ? (
+              <p className="error">{formik.errors.cidadeOrigem}</p>
+            ) : null}
+          </div>
         </div>
 
         <div className="wrapper-input">
           <label htmlFor="cidadeDestino">Cidade de destino:</label>
-          <ReactGoogleAutocomplete
-            id="cidadeDestino"
-            required
-            apiKey="AIzaSyAQlXH_lfQPVBxaO5SEifHsSVQou9d_etY"
-            onPlaceSelected={(place) =>
-              formik.setFieldValue("cidadeDestino", place.formatted_address)
-            }
-          />
-          {formik.touched.cidadeDestino && formik.errors.cidadeDestino ? (
-            <div>{formik.errors.cidadeDestino}</div>
-          ) : null}
+          <div style={{ width: "100%" }}>
+            <ReactGoogleAutocomplete
+              id="cidadeDestino"
+              apiKey="AIzaSyAQlXH_lfQPVBxaO5SEifHsSVQou9d_etY"
+              onPlaceSelected={(place) =>
+                formik.setFieldValue("cidadeDestino", place?.formatted_address)
+              }
+            />
+            {formik.touched.cidadeDestino && formik.errors.cidadeDestino ? (
+              <p className="error">{formik.errors.cidadeDestino}</p>
+            ) : null}
+          </div>
         </div>
 
         <div className="wrapper-input">

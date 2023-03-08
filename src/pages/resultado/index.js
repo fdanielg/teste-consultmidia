@@ -4,30 +4,34 @@ import { useRouter } from "next/router";
 export default function Resultado() {
   const router = useRouter();
   return (
-    <div>
-      <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-        <h1>Cidade origem:</h1>
-        <h2>{router.query.cidadeOrigem}</h2>
-      </div>
+    <div className="container-resultado">
+      <h1>Resultado</h1>
 
-      <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-        <h1>Cidade destino:</h1>
-        <h2> {router.query.cidadeDestino}</h2>
-      </div>
+      <div className="wrapper-resultado">
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+          <h2>Cidade origem:</h2>
+          <h3>{router.query.cidadeOrigem}</h3>
+        </div>
 
-      <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-        <h1>Distancia em KM:</h1>
-        <h2>{parseFloat(router.query.distancia)}km</h2>
-      </div>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+          <h2>Cidade destino:</h2>
+          <h3> {router.query.cidadeDestino}</h3>
+        </div>
 
-      <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-        <h1>Tipo do carro: </h1>
-        <h2>{router.query.tipoCarro}</h2>
-      </div>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+          <h2>Distancia em KM:</h2>
+          <h3>{parseFloat(router.query.distancia)}km</h3>
+        </div>
 
-      <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-        <h1>Valor do aluguel:</h1>
-        <h2>{formatCurrency(parseFloat(router.query.valorAluguel))}</h2>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+          <h2>Tipo do carro: </h2>
+          <h3>{router.query.tipoCarro}</h3>
+        </div>
+
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
+          <h2>Valor do aluguel:</h2>
+          <h3>{formatCurrency(parseFloat(router.query.valorAluguel))}</h3>
+        </div>
       </div>
     </div>
   );
