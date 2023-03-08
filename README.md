@@ -27,4 +27,4 @@ Uma empresa de locação de veículos precisa de uma aplicação para calcular a
 
 ## 🔗 Link
 
-Link onde o projeto está hospedado: [LINK](https://teste-consultmidia.vercel.app/https:/)
+Link onde o projeto está hospedado: [LINK](https://teste-consultmidia.vercel.app/)
