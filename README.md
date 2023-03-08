@@ -1,38 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Calculadora de distancia entre duas cidades
 
-## Getting Started
+Uma empresa de locação de veículos precisa de uma aplicação para calcular a distância entre duas cidades e retornar o valor do aluguel do carro para a viagem. O valor do aluguel é calculado em função da distância percorrida e do tipo de carro escolhido pelo cliente.Um parágrafo da descrição do projeto vai aqu
 
-First, run the development server:
+### 📋 Pré-requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+* NODE 16
+* NPM OU YARN
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔧 Instalação
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- npm install ou yarn (Para baixar os pacotes)
+- npm run dev ou yarn dev (Para inicializar o projeto)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 🛠️ Construído com
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* NextJS - Foi utilizado o framework por causa que as requisições para api do google so podem ser feitas atráves do server, o que ele possibilita fazer.
+* Axios - Utilizado para fazer as requisições para API
+* Formik - Criação do formulário
+* Yup - Validação dos formulários
+* React-google-autocomplete - Utilizado para fazer o autocomplete do input com as localização da api places do google
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ✒️ Autor
 
-## Learn More
+* **Flavio Daniel Girotto de Souza** - [GITHUB](https://github.com/fdanielg)
 
-To learn more about Next.js, take a look at the following resources:
+## 🔗 Link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Link onde o projeto está hospedado: [LINK](https://teste-consultmidia.vercel.app/https:/)
