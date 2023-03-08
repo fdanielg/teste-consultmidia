@@ -1,3 +1,4 @@
+import { formatCurrency } from "@/helpers/fomatCurrency";
 import { useRouter } from "next/router";
 
 export default function Resultado() {
@@ -26,7 +27,7 @@ export default function Resultado() {
 
       <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
         <h1>Valor do aluguel:</h1>
-        <h2>R${parseFloat(router.query.valorAluguel)}</h2>
+        <h2>{formatCurrency(parseFloat(router.query.valorAluguel))}</h2>
       </div>
     </div>
   );
