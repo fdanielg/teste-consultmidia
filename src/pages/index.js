@@ -1,5 +1,6 @@
 import * as Yup from "yup";
 
+import LoadingSpinner from "@/helpers/LoadingSpinner";
 import ReactGoogleAutocomplete from "react-google-autocomplete";
 import axios from "axios";
 import { useFormik } from "formik";
@@ -7,7 +8,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function Home() {
-  const [erro, setErro] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   //Tipo de carros disponíveis
@@ -30,7 +32,8 @@ export default function Home() {
     }),
     // envio dos dados para a API
     onSubmit: async (values) => {
-      setErro(false);
+      setError(false);
+      setLoading(true);
 
       try {
         const response = await axios.get(
@@ -56,6 +59,8 @@ export default function Home() {
             break;
         }
 
+        setLoading(false);
+
         // envio dos dados para a página de resultado
         router.push({
           pathname: "/resultado",
@@ -69,7 +74,8 @@ export default function Home() {
         });
       } catch (error) {
         console.log(error);
-        setErro(true);
+        setLoading(false);
+        setError(true);
       }
     },
   });
@@ -123,7 +129,8 @@ export default function Home() {
         </div>
         <button type="submit">Calcular</button>
       </form>
-      {erro && <p>Não foi possível obter a distância entre as cidades.</p>}
+      {loading ? <LoadingSpinner /> : null}
+      {error && <p>Não foi possível obter a distância entre as cidades.</p>}
     </div>
   );
 }
