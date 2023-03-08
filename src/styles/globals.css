@@ -98,7 +98,7 @@ a {
   gap: 16px;
   justify-content: center;
   padding: 25px 0;
-  text-align: center;
+
   margin: 10px;
 }
 
@@ -115,14 +115,15 @@ a {
 
 .wrapper-input {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
-  justify-content: space-between;
+
 }
 
 .error {
   color: red;
-  font-size: 12px;
+  font-size: 14px;
+  padding: 5px;
 }
 
 input {
@@ -130,21 +131,19 @@ input {
   padding: 14px 5px;
 }
 
+
 select {
   padding: 14px 5px;
-  max-width: 350px;
   width: 100%;
-  margin-left: 28px;
 }
 
 label {
   cursor: pointer;
-  white-space: nowrap;
-  text-align: start;
-  width: 120px;
+
 }
 
 button {
+  margin-top: 16px;
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
@@ -152,7 +151,6 @@ button {
   border: none;
   font-size: 20px;
   font-weight: 600;
-
 }
 
 .container-resultado {

@@ -89,6 +89,9 @@ export default function Home() {
 
           <div style={{ width: "100%" }}>
             <ReactGoogleAutocomplete
+              inputAutocompleteValue={formik.values.cidadeOrigem}
+              onChange={formik.handleChange}
+              name="cidadeOrigem"
               id="cidadeOrigem"
               apiKey="AIzaSyAQlXH_lfQPVBxaO5SEifHsSVQou9d_etY"
               onPlaceSelected={(place) =>
@@ -103,14 +106,18 @@ export default function Home() {
 
         <div className="wrapper-input">
           <label htmlFor="cidadeDestino">Cidade de destino:</label>
-          <div style={{ width: "100%" }}>
+          <div >
             <ReactGoogleAutocomplete
+              inputAutocompleteValue={formik.values.cidadeDestino}
+              onChange={formik.handleChange}
+              name="cidadeDestino"
               id="cidadeDestino"
               apiKey="AIzaSyAQlXH_lfQPVBxaO5SEifHsSVQou9d_etY"
               onPlaceSelected={(place) =>
                 formik.setFieldValue("cidadeDestino", place?.formatted_address)
               }
             />
+
             {formik.touched.cidadeDestino && formik.errors.cidadeDestino ? (
               <p className="error">{formik.errors.cidadeDestino}</p>
             ) : null}
