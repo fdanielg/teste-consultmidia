@@ -90,6 +90,7 @@ export default function Home() {
 
           <div style={{ width: "100%" }}>
             <ReactGoogleAutocomplete
+              placeholder="Insira a cidade de origem"
               inputAutocompleteValue={formik.values.cidadeOrigem}
               onChange={formik.handleChange}
               name="cidadeOrigem"
@@ -109,6 +110,7 @@ export default function Home() {
           <label htmlFor="cidadeDestino">Cidade de destino:</label>
           <div>
             <ReactGoogleAutocomplete
+              placeholder="Insira a cidade de destino"
               inputAutocompleteValue={formik.values.cidadeDestino}
               onChange={formik.handleChange}
               name="cidadeDestino"
