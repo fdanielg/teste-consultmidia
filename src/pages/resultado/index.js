@@ -10,28 +10,28 @@ export default function Resultado() {
 
       <div className={styles.wrapper}>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-          <h2>Cidade origem:</h2>
-          <h3>{router.query.cidadeOrigem}</h3>
+          <h3>Cidade origem:</h3>
+          <h4>{router.query.cidadeOrigem}</h4>
         </div>
 
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-          <h2>Cidade destino:</h2>
-          <h3> {router.query.cidadeDestino}</h3>
+          <h3>Cidade destino:</h3>
+          <h4> {router.query.cidadeDestino}</h4>
         </div>
 
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-          <h2>Distancia em KM:</h2>
-          <h3>{parseFloat(router.query.distancia)}km</h3>
+          <h3>Distancia em KM:</h3>
+          <h4>{parseFloat(router.query.distancia)}km</h4>
         </div>
 
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-          <h2>Tipo do carro: </h2>
-          <h3>{router.query.tipoCarro}</h3>
+          <h3>Tipo do carro: </h3>
+          <h4>{router.query.tipoCarro}</h4>
         </div>
 
         <div style={{ display: "flex", alignItems: "flex-end", gap: 8 }}>
-          <h2>Valor do aluguel:</h2>
-          <h3>{formatCurrency(parseFloat(router.query.valorAluguel))}</h3>
+          <h3>Valor do aluguel:</h3>
+          <h4>{formatCurrency(parseFloat(router.query.valorAluguel))}</h4>
         </div>
       </div>
     </div>

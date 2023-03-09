@@ -1,54 +1,63 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+  padding: 25px 0;
+  margin: 10px;
+
+  h1 {
+    text-align: center;
+  }
+
+  .formWrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    justify-content: center;
-    padding: 25px 0;
-    margin: 10px;
-
-    .formWrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        max-width: 500px;
-        width: 100%;
+    gap: 8px;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #fff;
+    padding: 15px 10px;
+    border-radius: 8px;
+    .wrapperInput {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .error {
+        color: red;
+        font-size: 14px;
+        padding: 5px;
+      }
+      input {
+        min-width: 100%;
+        padding: 14px 5px;
+        border-radius: 8px;
         border: 1px solid #fff;
-        padding: 10px;
-        .wrapperInput {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            .error {
-                color: red;
-                font-size: 14px;
-                padding: 5px;
-            }
-        }
+      }
 
-        input {
-            min-width: 100%;
-            padding: 14px 5px;
-        }
+      select {
+        height: 47px;
+        padding: 14px 5px;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #fff;
+      }
 
-        select {
-            padding: 14px 5px;
-            width: 100%;
-        }
-
-        label {
-            cursor: pointer;
-        }
-
-        button {
-            margin-top: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            padding: 16px 0;
-            border: none;
-            font-size: 20px;
-            font-weight: 600;
-        }
+      label {
+        width: fit-content;
+        cursor: pointer;
+      }
     }
+    button {
+      margin-top: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      padding: 16px 0;
+      border: none;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
 }
